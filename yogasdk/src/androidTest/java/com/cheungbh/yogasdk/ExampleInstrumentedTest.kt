@@ -1,0 +1,30 @@
+package com.cheungbh.yogasdk
+
+import android.util.Log
+import androidx.test.platform.app.InstrumentationRegistry
+import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.cheungbh.yogasdk.utilities.FeedbackUtilities
+
+import org.junit.Test
+import org.junit.runner.RunWith
+
+import org.junit.Assert.*
+
+/**
+ * Instrumented test, which will execute on an Android device.
+ *
+ * See [testing documentation](http://d.android.com/tools/testing).
+ */
+@RunWith(AndroidJUnit4::class)
+class ExampleInstrumentedTest {
+    @Test
+    fun useAppContext() {
+        // Context of the app under test.
+        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
+        assertEquals("com.cheungbh.yogasdk.test", appContext.packageName)
+        val test1Array = arrayOf(1.0, 2.0)
+        val test2Array = arrayOf(2.0, 3.0)
+        val testDist = FeedbackUtilities.cal_dis(test1Array, test2Array)
+        Log.d("Testing", "$testDist")
+    }
+}
